@@ -69,7 +69,7 @@ Artistly is a comprehensive talent management platform connecting event organize
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/yourusername/artistly.git
+   git clone https://github.com/Trilokrana/Artistly.git
    cd artistly
    ```
 
