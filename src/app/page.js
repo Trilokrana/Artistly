@@ -77,7 +77,7 @@ export default function Home() {
               </h2>
 
               <p className="text-base sm:text-lg mb-6 sm:mb-8">
-                As one of India's leading talent management companies, we curate
+                As one of India&apos; leading talent management companies, we curate
                 the right-fit talent for meaningful engagement, entertainment,
                 and endorsement; across genres, geographies, and platforms.
               </p>
@@ -293,7 +293,7 @@ export default function Home() {
                   </span>
                 </h2>
                 <p className="text-base sm:text-lg mb-6">
-                  Whether you're looking for the perfect talent for your event,
+                  Whether you are looking for the perfect talent for your event,
                   brand partnership, or digital campaign, our team of experts is
                   here to help you find the perfect match.
                 </p>

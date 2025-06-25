@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import FormField from "../components/FormField";
+import Image from "next/image";
 
 const categories = ["Singer", "Comedian", "DJ", "Dancer", "Speaker", "Actor"];
 const languages = ["Hindi", "English", "Punjabi", "Tamil", "Telugu"];
@@ -267,10 +268,13 @@ const ArtistOnboardForm = () => {
                     {formData.profileImage ? (
                       <>
                         <div className="mb-3 w-24 h-24 sm:w-32 sm:h-32 mx-auto rounded-full overflow-hidden border border-gray-300">
-                          <img
+                          <Image
                             src={URL.createObjectURL(formData.profileImage)}
                             alt="Profile preview"
+                            width={128}
+                            height={128}
                             className="w-full h-full object-cover"
+                            unoptimized={true}
                           />
                         </div>
                         <span className="text-green-600 font-medium text-sm sm:text-base">

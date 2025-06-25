@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Artistly: Talent Management Platform
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=flat-square&logo=framer&logoColor=white)
 
-First, run the development server:
+## 📋 Overview
+
+Artistly is a comprehensive talent management platform connecting event organizers with performers, entertainers, and public figures. Our marketplace facilitates talent booking across multiple categories while providing a streamlined onboarding process for artists.
+
+## 🛠️ Technical Architecture
+
+- **Framework**: Next.js with App Router architecture
+- **UI Rendering**: React with client-side components
+- **Styling**: Tailwind CSS for responsive design
+- **Animations**: Framer Motion for smooth transitions
+- **Typography**: Optimized Geist and Geist Mono fonts
+- **Data**: Static data with hooks for state management
+
+## ✨ Core Features
+
+### 🏠 Home Page
+
+- **Hero Section**: Bold typography highlighting "ENGAGE TALENT WITH PURPOSE"
+- **Core Offerings**: Talent management for events, brand endorsements, and digital campaigns
+- **Talent Categories**: Responsive grid of 12 talent categories
+- **CTAs**: Artist exploration and collaboration sections
+
+### 👥 Artist Directory (`/artists`)
+
+- **Filtering System**: Filter by category, location, and price range
+- **Dynamic URL Parameters**: Category-specific filtering
+- **Responsive Grid**: Clean layout with visual artist cards
+- **UX Elements**: Loading states and empty state handling
+
+### 📝 Artist Onboarding (`/onboard`)
+
+- **Multi-field Form**: Comprehensive artist information collection
+- **Validation**: Required fields with error messaging
+- **Multiple Selections**: Categories and languages
+- **Image Upload**: Profile image with preview
+- **Data Storage**: localStorage (API-ready for production)
+
+### 📊 Artist Dashboard (`/dashboard`)
+
+- **Visual Cards**: Stylized artist information display
+- **Categorized Views**: Visual category differentiation
+- **Animation Effects**: Smooth Framer Motion transitions
+- **Empty State Handling**: Appropriate user feedback
+
+## 🎨 Design System
+
+- **Colors**: Black and white base with yellow-300 accents
+- **Typography**: Clean hierarchy and readability
+- **Components**: Consistent card patterns and CTAs
+- **Responsive**: Fully adaptive from mobile to desktop
+
+## ⚙️ Installation Guide
+
+### Prerequisites
+
+- Node.js 18.x or later
+- npm or yarn package manager
+- Git
+
+### Setup Instructions
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/yourusername/artistly.git
+   cd artistly
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Environment Configuration**
+   Create a `.env.local` file in the root directory with the following variables:
+
+   ```
+   NEXT_PUBLIC_API_URL=your_api_url_here
+   ```
+
+4. **Run the development server**
+
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+5. **Access the application**
+   Open your browser and navigate to `http://localhost:3000`
+
+### Build for Production
 
 ```bash
-npm run dev
+npm run build
+npm start
 # or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+yarn build
+yarn start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Additional Configuration
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- Update the `next.config.js` file for advanced configurations
+- Customize `tailwind.config.js` for theme adjustments
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+⭐ **Artistly** connects talent with opportunities in the entertainment industry through a modern, scalable platform designed for exceptional user experience.
