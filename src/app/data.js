@@ -1,0 +1,703 @@
+const dummyCategories = [
+  {
+    id: 1,
+    name: "Singers/Bands Bollywood",
+    image: "/Images/singer.jpg",
+  },
+  {
+    id: 2,
+    name: "Bands - Non Bollywood",
+    image: "/Images/bands.jpg",
+  },
+  { id: 3, name: "Stand-up Comedians", image: "/Images/stand-up.jpg" },
+  { id: 4, name: "Speakers", image: "/Images/speakers.jpg" },
+  { id: 5, name: "Sports Personalities", image: "/Images/sports.jpg" },
+  { id: 6, name: "Anchors", image: "/Images/anchors.jpg" },
+  { id: 7, name: "Film/TV Actors", image: "/Images/film-tv.jpg" },
+  {
+    id: 8,
+    name: "Influencers & Content Creators",
+    image: "/Images/influencer.jpg",
+  },
+  { id: 9, name: "Celeb Dance Performers", image: "/Images/celebs.jpg" },
+  {
+    id: 10,
+    name: "Unique Acts - Indian/International",
+    image: "/Images/unique.jpg",
+  },
+  { id: 11, name: "Dance Productions", image: "/Images/dance.jpg" },
+  { id: 12, name: "Musical Ensembles", image: "/Images/musical.jpg" },
+];
+
+const dummyArtists = [
+  {
+    id: 101,
+    name: "Arijit Singh",
+    categoryId: 1,
+    categoryName: "Singers/Bands Bollywood",
+    priceRange: "₹5,00,000 - ₹15,00,000",
+    location: "Mumbai",
+    image:
+      "https://images.unsplash.com/photo-1529518969858-8baa65152fc8?q=80&w=1470&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 102,
+    name: "Neha Kakkar",
+    categoryId: 1,
+    categoryName: "Singers/Bands Bollywood",
+    priceRange: "₹4,00,000 - ₹12,00,000",
+    location: "Delhi",
+    image: "/Images/neha-kakkar.jpeg",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 103,
+    name: "Badshah",
+    categoryId: 1,
+    categoryName: "Singers/Bands Bollywood",
+    priceRange: "₹6,00,000 - ₹18,00,000",
+    location: "Chandigarh",
+    image:
+      "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1470&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 104,
+    name: "Shreya Ghoshal",
+    categoryId: 1,
+    categoryName: "Singers/Bands Bollywood",
+    priceRange: "₹4,50,000 - ₹14,00,000",
+    location: "Mumbai",
+    image:
+      "https://images.unsplash.com/photo-1541689221361-ad95003448dc?q=80&w=1470&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 105,
+    name: "Jubin Nautiyal",
+    categoryId: 1,
+    categoryName: "Singers/Bands Bollywood",
+    priceRange: "₹3,50,000 - ₹9,00,000",
+    location: "Delhi",
+    image:
+      "https://images.unsplash.com/photo-1543443258-92b04ad5ec6b?q=80&w=1470&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+
+  // Category 2: Bands - Non Bollywood
+  {
+    id: 201,
+    name: "Indian Ocean",
+    categoryId: 2,
+    categoryName: "Bands - Non Bollywood",
+    priceRange: "₹3,00,000 - ₹8,00,000",
+    location: "Delhi",
+    image:
+      "https://images.unsplash.com/photo-1501612780327-45045538702b?q=80&w=1470&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 202,
+    name: "The Local Train",
+    categoryId: 2,
+    categoryName: "Bands - Non Bollywood",
+    priceRange: "₹2,50,000 - ₹6,00,000",
+    location: "Delhi",
+    image:
+      "https://images.unsplash.com/photo-1468234847176-28606331216a?q=80&w=1474&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 203,
+    name: "When Chai Met Toast",
+    categoryId: 2,
+    categoryName: "Bands - Non Bollywood",
+    priceRange: "₹2,00,000 - ₹5,50,000",
+    location: "Kochi",
+    image: "/Images/chai-meet-toast.jpg",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 204,
+    name: "Agnee",
+    categoryId: 2,
+    categoryName: "Bands - Non Bollywood",
+    priceRange: "₹2,80,000 - ₹7,00,000",
+    location: "Pune",
+    image:
+      "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1470&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 205,
+    name: "Parikrama",
+    categoryId: 2,
+    categoryName: "Bands - Non Bollywood",
+    priceRange: "₹3,20,000 - ₹8,50,000",
+    location: "Delhi",
+    image:
+      "https://images.unsplash.com/photo-1471478331149-c72f17e33c73?q=80&w=1469&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+
+  // Category 3: Stand-up Comedians
+  {
+    id: 301,
+    name: "Vir Das",
+    categoryId: 3,
+    categoryName: "Stand-up Comedians",
+    priceRange: "₹5,00,000 - ₹15,00,000",
+    location: "Mumbai",
+    image:
+      "https://images.unsplash.com/photo-1527224857830-43a7acc85260?q=80&w=1471&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 302,
+    name: "Zakir Khan",
+    categoryId: 3,
+    categoryName: "Stand-up Comedians",
+    priceRange: "₹4,50,000 - ₹12,00,000",
+    location: "Delhi",
+    image: "/Images/zakir.jpg",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 303,
+    name: "Kanan Gill",
+    categoryId: 3,
+    categoryName: "Stand-up Comedians",
+    priceRange: "₹3,50,000 - ₹9,00,000",
+    location: "Bangalore",
+    image:
+      "https://images.unsplash.com/photo-1535981767287-35259dbf7d0e?q=80&w=1470&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 304,
+    name: "Kunal Kamra",
+    categoryId: 3,
+    categoryName: "Stand-up Comedians",
+    priceRange: "₹3,00,000 - ₹8,00,000",
+    location: "Mumbai",
+    image:
+      "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=1448&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 305,
+    name: "Biswa Kalyan Rath",
+    categoryId: 3,
+    categoryName: "Stand-up Comedians",
+    priceRange: "₹3,20,000 - ₹8,50,000",
+    location: "Bangalore",
+    image:
+      "https://images.unsplash.com/photo-1522556189639-b150ed9c4330?q=80&w=1374&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+
+  // Category 4: Speakers
+  {
+    id: 401,
+    name: "Dr. Shashi Tharoor",
+    categoryId: 4,
+    categoryName: "Speakers",
+    priceRange: "₹7,00,000 - ₹20,00,000",
+    location: "Delhi",
+    image:
+      "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=1470&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 402,
+    name: "Sadhguru Jaggi Vasudev",
+    categoryId: 4,
+    categoryName: "Speakers",
+    priceRange: "₹8,00,000 - ₹25,00,000",
+    location: "Coimbatore",
+    image:
+      "https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=1374&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 403,
+    name: "Gaur Gopal Das",
+    categoryId: 4,
+    categoryName: "Speakers",
+    priceRange: "₹5,50,000 - ₹15,00,000",
+    location: "Mumbai",
+    image:
+      "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?q=80&w=1470&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 404,
+    name: "Rujuta Diwekar",
+    categoryId: 4,
+    categoryName: "Speakers",
+    priceRange: "₹4,00,000 - ₹12,00,000",
+    location: "Mumbai",
+    image:
+      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1376&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 405,
+    name: "Sandeep Maheshwari",
+    categoryId: 4,
+    categoryName: "Speakers",
+    priceRange: "₹6,00,000 - ₹18,00,000",
+    location: "Delhi",
+    image:
+      "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1374&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+
+  // Category 5: Sports Personalities
+  {
+    id: 501,
+    name: "Virat Kohli",
+    categoryId: 5,
+    categoryName: "Sports Personalities",
+    priceRange: "₹50,00,000 - ₹1,50,00,000",
+    location: "Delhi",
+    image:
+      "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=1335&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 502,
+    name: "MS Dhoni",
+    categoryId: 5,
+    categoryName: "Sports Personalities",
+    priceRange: "₹45,00,000 - ₹1,20,00,000",
+    location: "Ranchi",
+    image:
+      "https://images.unsplash.com/photo-1552667466-07770ae110d0?q=80&w=1470&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 503,
+    name: "PV Sindhu",
+    categoryId: 5,
+    categoryName: "Sports Personalities",
+    priceRange: "₹20,00,000 - ₹60,00,000",
+    location: "Hyderabad",
+    image:
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1470&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 504,
+    name: "Saina Nehwal",
+    categoryId: 5,
+    categoryName: "Sports Personalities",
+    priceRange: "₹18,00,000 - ₹55,00,000",
+    location: "Hyderabad",
+    image: "/Images/sania.jpg",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 505,
+    name: "Sania Mirza",
+    categoryId: 5,
+    categoryName: "Sports Personalities",
+    priceRange: "₹25,00,000 - ₹70,00,000",
+    location: "Hyderabad",
+    image:
+      "https://images.unsplash.com/photo-1434682881908-b43d0467b798?q=80&w=1374&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+
+  // Category 6: Anchors
+  {
+    id: 601,
+    name: "Maniesh Paul",
+    categoryId: 6,
+    categoryName: "Anchors",
+    priceRange: "₹5,00,000 - ₹15,00,000",
+    location: "Mumbai",
+    image: "/Images/manish-paul.avif",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 602,
+    name: "Gaurav Kapoor",
+    categoryId: 6,
+    categoryName: "Anchors",
+    priceRange: "₹4,00,000 - ₹12,00,000",
+    location: "Mumbai",
+    image:
+      "https://images.unsplash.com/photo-1489980557514-251d61e3eeb6?q=80&w=1470&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 603,
+    name: "Mini Mathur",
+    categoryId: 6,
+    categoryName: "Anchors",
+    priceRange: "₹3,50,000 - ₹10,00,000",
+    location: "Mumbai",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1374&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 604,
+    name: "Sushant Divgikar",
+    categoryId: 6,
+    categoryName: "Anchors",
+    priceRange: "₹2,50,000 - ₹7,00,000",
+    location: "Mumbai",
+    image:
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1374&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 605,
+    name: "Gitikka Ganju Dhar",
+    categoryId: 6,
+    categoryName: "Anchors",
+    priceRange: "₹3,00,000 - ₹9,00,000",
+    location: "Delhi",
+    image:
+      "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1361&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+
+  // Category 7: Film/TV Actors
+  {
+    id: 701,
+    name: "Ranveer Singh",
+    categoryId: 7,
+    categoryName: "Film/TV Actors",
+    priceRange: "₹70,00,000 - ₹2,00,00,000",
+    location: "Mumbai",
+    image:
+      "https://images.unsplash.com/photo-1542340916-951bb72c8f74?q=80&w=1374&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 702,
+    name: "Alia Bhatt",
+    categoryId: 7,
+    categoryName: "Film/TV Actors",
+    priceRange: "₹60,00,000 - ₹1,80,00,000",
+    location: "Mumbai",
+    image:
+      "https://images.unsplash.com/photo-1496440737103-cd596325d314?q=80&w=1374&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 703,
+    name: "Ayushmann Khurrana",
+    categoryId: 7,
+    categoryName: "Film/TV Actors",
+    priceRange: "₹40,00,000 - ₹1,20,00,000",
+    location: "Mumbai",
+    image:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1374&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 704,
+    name: "Taapsee Pannu",
+    categoryId: 7,
+    categoryName: "Film/TV Actors",
+    priceRange: "₹30,00,000 - ₹90,00,000",
+    location: "Mumbai",
+    image:
+      "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1374&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 705,
+    name: "Mouni Roy",
+    categoryId: 7,
+    categoryName: "Film/TV Actors",
+    priceRange: "₹25,00,000 - ₹75,00,000",
+    location: "Mumbai",
+    image:
+      "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1374&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+
+  // Category 8: Influencers & Content Creators
+  {
+    id: 801,
+    name: "Bhuvan Bam",
+    categoryId: 8,
+    categoryName: "Influencers & Content Creators",
+    priceRange: "₹15,00,000 - ₹40,00,000",
+    location: "Delhi",
+    image:
+      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1374&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 802,
+    name: "Mostly Sane (Prajakta Koli)",
+    categoryId: 8,
+    categoryName: "Influencers & Content Creators",
+    priceRange: "₹12,00,000 - ₹35,00,000",
+    location: "Mumbai",
+    image:
+      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1374&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 803,
+    name: "Ashish Chanchlani",
+    categoryId: 8,
+    categoryName: "Influencers & Content Creators",
+    priceRange: "₹14,00,000 - ₹38,00,000",
+    location: "Mumbai",
+    image:
+      "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?q=80&w=1374&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 804,
+    name: "Komal Pandey",
+    categoryId: 8,
+    categoryName: "Influencers & Content Creators",
+    priceRange: "₹8,00,000 - ₹25,00,000",
+    location: "Delhi",
+    image:
+      "https://images.unsplash.com/photo-1493666438817-866a91353ca9?q=80&w=1374&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 805,
+    name: "Technical Guruji (Gaurav Chaudhary)",
+    categoryId: 8,
+    categoryName: "Influencers & Content Creators",
+    priceRange: "₹10,00,000 - ₹30,00,000",
+    location: "Dubai/Mumbai",
+    image:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+
+  // Category 9: Celeb Dance Performers
+  {
+    id: 901,
+    name: "Terence Lewis",
+    categoryId: 9,
+    categoryName: "Celeb Dance Performers",
+    priceRange: "₹8,00,000 - ₹20,00,000",
+    location: "Mumbai",
+    image:
+      "https://images.unsplash.com/photo-1541439998155-388623962c26?q=80&w=1470&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 902,
+    name: "Shakti Mohan",
+    categoryId: 9,
+    categoryName: "Celeb Dance Performers",
+    priceRange: "₹7,00,000 - ₹18,00,000",
+    location: "Mumbai",
+    image: "/Images/shakti-mohan.webp",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 903,
+    name: "Dharmesh Yelande",
+    categoryId: 9,
+    categoryName: "Celeb Dance Performers",
+    priceRange: "₹6,50,000 - ₹17,00,000",
+    location: "Mumbai",
+    image:
+      "https://images.unsplash.com/photo-1535966953907-e3a81e258148?q=80&w=1374&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 904,
+    name: "Punit Pathak",
+    categoryId: 9,
+    categoryName: "Celeb Dance Performers",
+    priceRange: "₹6,00,000 - ₹16,00,000",
+    location: "Mumbai",
+    image: "/Images/punit.jpeg",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 905,
+    name: "Lauren Gottlieb",
+    categoryId: 9,
+    categoryName: "Celeb Dance Performers",
+    priceRange: "₹7,50,000 - ₹19,00,000",
+    location: "Mumbai",
+    image:
+      "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=1406&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+
+  // Category 10: Unique Acts - Indian/International
+  {
+    id: 1001,
+    name: "Flute Siva",
+    categoryId: 10,
+    categoryName: "Unique Acts - Indian/International",
+    priceRange: "₹2,00,000 - ₹6,00,000",
+    location: "Chennai",
+    image:
+      "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=1470&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 1002,
+    name: "Rahmaat Circus Group",
+    categoryId: 10,
+    categoryName: "Unique Acts - Indian/International",
+    priceRange: "₹3,00,000 - ₹8,00,000",
+    location: "Mumbai",
+    image:
+      "https://images.unsplash.com/photo-1573055418049-c8e0b7e3403b?q=80&w=1470&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 1003,
+    name: "LED Poi Performers",
+    categoryId: 10,
+    categoryName: "Unique Acts - Indian/International",
+    priceRange: "₹1,80,000 - ₹5,50,000",
+    location: "Delhi",
+    image: "/Images/led.jpeg",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 1004,
+    name: "Bubble Artist Samsara",
+    categoryId: 10,
+    categoryName: "Unique Acts - Indian/International",
+    priceRange: "₹1,50,000 - ₹4,00,000",
+    location: "Bangalore",
+    image:
+      "https://images.unsplash.com/photo-1551892374-ecf8754cf8b0?q=80&w=1534&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 1005,
+    name: "Aerial Silk Performers",
+    categoryId: 10,
+    categoryName: "Unique Acts - Indian/International",
+    priceRange: "₹2,50,000 - ₹7,00,000",
+    location: "Mumbai",
+    image: "/Images/allmale.webp",
+    ctaText: "Ask for Quote",
+  },
+
+  // Category 11: Dance Productions
+  {
+    id: 1101,
+    name: "Kings United",
+    categoryId: 11,
+    categoryName: "Dance Productions",
+    priceRange: "₹10,00,000 - ₹30,00,000",
+    location: "Mumbai",
+    image: "/Images/kings.jpg",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 1102,
+    name: "Shiamak Davar Dance Company",
+    categoryId: 11,
+    categoryName: "Dance Productions",
+    priceRange: "₹12,00,000 - ₹35,00,000",
+    location: "Mumbai",
+    image:
+      "https://images.unsplash.com/photo-1535525153412-5a42439a210d?q=80&w=1470&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 1103,
+    name: "Bivash Academy of Dance",
+    categoryId: 11,
+    categoryName: "Dance Productions",
+    priceRange: "₹8,00,000 - ₹25,00,000",
+    location: "Delhi",
+    image: "/Images/academy.jpeg",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 1104,
+    name: "Terrance Lewis Dance Academy",
+    categoryId: 11,
+    categoryName: "Dance Productions",
+    priceRange: "₹9,00,000 - ₹28,00,000",
+    location: "Mumbai",
+    image:
+      "https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=1374&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 1105,
+    name: "MJ5 Dance Crew",
+    categoryId: 11,
+    categoryName: "Dance Productions",
+    priceRange: "₹7,00,000 - ₹20,00,000",
+    location: "Delhi",
+    image:
+      "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=1469&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+
+  // Category 12: Musical Ensembles
+  {
+    id: 1201,
+    name: "Kabir Cafe",
+    categoryId: 12,
+    categoryName: "Musical Ensembles",
+    priceRange: "₹3,50,000 - ₹9,00,000",
+    location: "Mumbai",
+    image:
+      "https://images.unsplash.com/photo-1511192336575-5a79af67a629?q=80&w=1632&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 1202,
+    name: "Dharavi Rocks",
+    categoryId: 12,
+    categoryName: "Musical Ensembles",
+    priceRange: "₹2,00,000 - ₹5,00,000",
+    location: "Mumbai",
+    image:
+      "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=1470&auto=format&fit=crop",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 1203,
+    name: "Mame Khan & Group",
+    categoryId: 12,
+    categoryName: "Musical Ensembles",
+    priceRange: "₹2,80,000 - ₹7,50,000",
+    location: "Rajasthan",
+    image: "/Images/khan.jpeg",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 1204,
+    name: "Thaikkudam Bridge",
+    categoryId: 12,
+    categoryName: "Musical Ensembles",
+    priceRange: "₹4,00,000 - ₹12,00,000",
+    location: "Kerala",
+    image: "/Images/thaikkudam-bridge.webp",
+    ctaText: "Ask for Quote",
+  },
+  {
+    id: 1205,
+    name: "Raghu Dixit Project",
+    categoryId: 12,
+    categoryName: "Musical Ensembles",
+    priceRange: "₹3,80,000 - ₹11,00,000",
+    location: "Bangalore",
+    image: "/Images/raghu-dixit.jpeg",
+    ctaText: "Ask for Quote",
+  },
+];
+
+export { dummyCategories, dummyArtists };
