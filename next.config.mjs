@@ -1,10 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  experimental: {
-    appDir: true, 
-  },
-   images: {
+  images: {
     domains: ['images.unsplash.com','www.google.com'],
   },
 };
